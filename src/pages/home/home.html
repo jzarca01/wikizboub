@@ -1,14 +1,15 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <div class="content">
+    <div id="map" #map>
+      <ion-fab id="menu" right bottom #fab>
+        <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+        <ion-fab-list side="left">
+          <button ion-fab (click)="showThisMarkers(fab)"><ion-icon name="logo-facebook"></ion-icon></button>
+          <!--<button ion-fab (click)="openSocial('twitter', fab2)"><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab (click)="openSocial('vimeo', fab2)"><ion-icon name="logo-vimeo"></ion-icon></button>
+          <button ion-fab (click)="openSocial('googleplus', fab2)"><ion-icon name="logo-googleplus"></ion-icon></button>-->
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </div>
 </ion-content>

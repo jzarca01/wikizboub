@@ -1,15 +1,17 @@
 {
-  "name": "ionic-3-google-maps",
+  "name": "wiki-zboub",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Jeremie Zarca",
+  "homepage": "http://jzarca01.github.io",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "ios": "ionic-app-scripts clean && ionic-app-scripts lint && ionic cordova build ios && ionic cordova emulate ios --livereload --debug --target='iPhone-6, 9.3'",
+    "device": "ionic-app-scripts clean && ionic-app-scripts lint && ionic cordova build ios && ionic cordova run ios --livereload --debug --buildFlag='-allowProvisioningUpdates'"
   },
   "dependencies": {
     "@angular/animations": "5.2.9",
@@ -21,10 +23,25 @@
     "@angular/http": "5.2.9",
     "@angular/platform-browser": "5.2.9",
     "@angular/platform-browser-dynamic": "5.2.9",
+    "@ionic-native/background-geolocation": "^4.7.0",
     "@ionic-native/core": "4.6.0",
+    "@ionic-native/geolocation": "^4.7.0",
+    "@ionic-native/google-maps": "^4.6.3",
+    "@ionic-native/native-storage": "^4.7.0",
     "@ionic-native/splash-screen": "4.6.0",
     "@ionic-native/status-bar": "4.6.0",
     "@ionic/storage": "2.1.3",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git",
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git#2.6.0",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^1.2.0",
+    "cordova-plugin-nativestorage": "^2.3.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^2.3.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "rxjs": "5.5.8",
@@ -35,5 +52,26 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "WikiZboub",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyBVDzUxERY2MWojtO3F_S8t1Z814R2bjD8",
+        "API_KEY_FOR_IOS": "AIzaSyCX6arvaIDkfeO_9hnyEahFUlm52kWmeZ8"
+      },
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      },
+      "cordova-plugin-nativestorage": {}
+    },
+    "platforms": [
+      "ios"
+    ]
+  }
 }
